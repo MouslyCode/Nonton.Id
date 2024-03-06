@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 class DataForm extends StatelessWidget {
   final String hintText;
   final IconData icon;
-  const DataForm({super.key, required this.hintText, required this.icon});
+  final bool obscureText;
+  const DataForm(
+      {super.key,
+      required this.hintText,
+      required this.icon,
+      this.obscureText = false});
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +31,7 @@ class DataForm extends StatelessWidget {
         ),
         prefixIconColor: Colors.white24,
       ),
+      obscureText: obscureText,
     );
   }
 }

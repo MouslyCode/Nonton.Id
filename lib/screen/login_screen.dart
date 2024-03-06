@@ -1,7 +1,9 @@
 import 'dart:ui';
 
 import 'package:edspert/constant/app_colors.dart';
+import 'package:edspert/constant/route_constant.dart';
 import 'package:edspert/widget/data_form.dart';
+import 'package:go_router/go_router.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -15,7 +17,9 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.background,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: -43, vertical: -20),
+        padding: EdgeInsets.symmetric(
+          horizontal: 43,
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -37,11 +41,15 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(
               height: 12,
             ),
-            DataForm(hintText: 'Password', icon: Icons.lock),
+            DataForm(
+              hintText: 'Password',
+              icon: Icons.lock_outline_rounded,
+              obscureText: true,
+            ),
             const SizedBox(
               height: 32,
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
@@ -52,14 +60,19 @@ class LoginScreen extends StatelessWidget {
                     fontSize: 12,
                   ),
                 ),
-                Text(
-                  'Daftar',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 12,
+                InkWell(
+                  onTap: () {
+                    context.go(RouteConstant.registration);
+                  },
+                  child: Text(
+                    'Daftar',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 12,
+                    ),
                   ),
-                )
+                ),
               ],
             ),
           ],
