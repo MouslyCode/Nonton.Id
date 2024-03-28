@@ -4,6 +4,7 @@ class DataForm extends StatelessWidget {
   final String hintText;
   final IconData icon;
   final bool obscureText;
+
   const DataForm(
       {super.key,
       required this.hintText,
@@ -13,17 +14,17 @@ class DataForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      style: TextStyle(color: Colors.white),
+      style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
-        border: OutlineInputBorder(
+        border: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(8)),
           borderSide: BorderSide(width: 0, style: BorderStyle.none),
         ),
-        contentPadding: EdgeInsets.symmetric(vertical: 8),
+        contentPadding: const EdgeInsets.symmetric(vertical: 8),
         filled: true,
-        fillColor: Color(0xFF2F2C44),
+        fillColor: const Color(0xFF2F2C44),
         hintText: hintText,
-        hintStyle: TextStyle(
+        hintStyle: const TextStyle(
             color: Colors.white24, fontSize: 14, fontWeight: FontWeight.w400),
         prefixIcon: Icon(
           icon,

@@ -3,6 +3,7 @@ import 'package:edspert/constant/route_constant.dart';
 import 'package:edspert/screen/login_screen.dart';
 import 'package:edspert/screen/registration_screen.dart';
 import 'package:edspert/screen/splash_screen.dart';
+import 'package:edspert/screen/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -20,9 +21,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.background,
-        backgroundColor: AppColors.background,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)
+            .copyWith(background: AppColors.background),
       ),
       routerConfig: GoRouter(
         initialLocation: RouteConstant.splash,
@@ -45,6 +46,12 @@ class MyApp extends StatelessWidget {
             builder: (BuildContext context, GoRouterState state) =>
                 const RegistrationScreen(),
           ),
+          GoRoute(
+            path: '/main',
+            name: RouteConstant.dashboard,
+            builder: (BuildContext context, GoRouterState state) =>
+                const DashboardScreen(),
+          )
         ],
       ),
     );
